@@ -11,7 +11,7 @@ node {
   stage ('Run Application') {
     try {
       // Stop existing Container
-      sh 'docker rm docker_container -f'
+      //sh 'docker rm docker_container -f'
       // Start database container here
       sh "docker run -d --name docker_container docker_image:${env.BUILD_NUMBER}"
     } 
@@ -23,8 +23,8 @@ node {
   }
   
   stage ('Notifications') {
-    mail body: "Project Execution Completed with status : " + currentBuild.result ,
-                     subject: 'Project Execution Notification',
-                     to: 'abc@abc.com'
+    //mail body: "Project Execution Completed with status : " + currentBuild.result ,
+      //               subject: 'Project Execution Notification',
+        //             to: 'abc@abc.com'
      }
  }
